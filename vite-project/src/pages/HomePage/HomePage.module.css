@@ -1,0 +1,69 @@
+.container {
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  background-color: #00000033;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../assets/camper.jfif");
+  background-size: cover;
+  background-position: center;
+}
+
+.content {
+  text-align: center;
+  color: #fff;
+  padding-left: 64px;
+  border-radius: 8px;
+  font-family: "Inter";
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 32px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.title {
+  font-family: "Inter";
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 32px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  margin-bottom: 16px;
+  padding: 0;
+}
+
+.subtitle {
+  font-family: "Inter";
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.button {
+  width: 173px;
+  height: 56px;
+  padding: 16px 48.5px;
+  gap: 10px;
+  border-radius: 200px;
+  border: 0;
+  opacity: 0px;
+  background: #e44848;
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.005em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #fff;
+}
