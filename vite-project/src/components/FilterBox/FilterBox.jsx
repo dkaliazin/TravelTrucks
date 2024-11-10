@@ -53,7 +53,12 @@ const FilterBox = ({ onFilter }) => {
   }, []);
 
  
-const handleSearch = () => {
+  const handleSearch = () => {
+    const formMapping = {
+      'Van': 'panelTruck',
+      'Fully Integrated': 'fullyIntegrated',
+      'Alcove': 'alcove'
+    };
     const filters = {
       location: selectedFilters.location,
       AC: selectedEquipment.includes('AC'),
@@ -65,6 +70,8 @@ const handleSearch = () => {
       microwave: selectedEquipment.includes('Microwave'),
       gas: selectedEquipment.includes('Gas'),
       water: selectedEquipment.includes('Water'),
+      transmission: selectedEquipment.includes('Automatic') ? 'automatic' : 'manual',
+      form: formMapping[selectedType] || '',
     };
     onFilter(filters);  
   };

@@ -3,6 +3,7 @@
   flex-direction: row;
   gap: 0;
   padding: 0;
+  padding-top: 48px;
 }
 
 .filter-box {
@@ -13,28 +14,6 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
-}
-
-.location-filter,
-.vehicle-equipment,
-.vehicle-type {
-  margin-bottom: 20px;
-}
-
-.vehicle-equipment button,
-.vehicle-type button {
-  display: inline-block;
-  padding: 8px 12px;
-  margin: 5px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.vehicle-equipment button.active,
-.vehicle-type button.active {
-  background-color: #ff4b5c;
-  color: #fff;
 }
 
 .search-button {

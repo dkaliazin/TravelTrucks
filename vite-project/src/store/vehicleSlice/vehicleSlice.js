@@ -1,14 +1,14 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// Изменяем fetchVehicles для использования фильтров
+
 export const fetchVehicles = createAsyncThunk(
   'vehicles/fetchVehicles',
   async (filters) => {
-    // Строим query параметры на основе фильтров
+
     let query = new URLSearchParams();
 
-    // Если выбраны фильтры по оборудованию, добавляем их как отдельные параметры
+ 
     if (filters.location) query.append('location', filters.location);
     if (filters.AC) query.append('AC', 'true');
     if (filters.bathroom) query.append('bathroom', 'true');
@@ -19,7 +19,8 @@ export const fetchVehicles = createAsyncThunk(
     if (filters.microwave) query.append('microwave', 'true');
     if (filters.gas) query.append('gas', 'true');
     if (filters.water) query.append('water', 'true');
-
+    if (filters.transmission) query.append('transmission', filters.transmission);
+    if (filters.form) query.append('form', filters.form);
     const response = await axios.get(`https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/campers?${query.toString()}`);
 
     return response.data;
@@ -27,7 +28,7 @@ export const fetchVehicles = createAsyncThunk(
 );
 const vehicleSlice = createSlice({
   name: 'vehicles',
-  initialState: { list: [], loading: false, error: null }, // добавьте состояния загрузки и ошибок
+  initialState: { list: [], loading: false, error: null }, 
   reducers: {},
   extraReducers: (builder) => {
     builder
@@ -35,7 +36,7 @@ const vehicleSlice = createSlice({
         state.loading = true;
       })
       .addCase(fetchVehicles.fulfilled, (state, action) => {
-        state.list = action.payload.items;  // извлекаем массив из объекта
+        state.list = action.payload.items;  
         state.loading = false;
       })
       .addCase(fetchVehicles.rejected, (state, action) => {

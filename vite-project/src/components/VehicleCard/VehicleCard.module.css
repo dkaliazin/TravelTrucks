@@ -14,41 +14,122 @@
   border-radius: 10px;
 }
 
-.vehicle-info {
-  flex: 1;
+.vehicleinfo {
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 }
-
-.vehicle-name {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.vehicle-location,
-.vehicle-price {
-  color: #757575;
-}
-
-.vehicle-description {
-  margin: 10px 0;
-}
-
-.vehicle-features {
+.namepricebox {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.vehiclename {
+  font-family: "Inter";
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  margin: 0;
+  padding-bottom: 8px;
+}
+.vehicleprice {
+  font-family: "Inter";
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  margin: 0;
+  padding-bottom: 8px;
+}
+.vehiclelocation {
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #101828;
+  margin: 0;
+  padding-bottom: 24px;
+}
+.vehicledescription {
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #475467;
+  margin: 0;
+  padding-bottom: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+.vehiclefeatures {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 8px;
-  margin-bottom: 10px;
+  margin: 0;
+  padding-bottom: 24px;
+  max-width: 391px;
 }
 
 .feature {
-  padding: 4px 8px;
-  background-color: #f5f5f5;
-  border-radius: 4px;
+  padding: 12px 18px;
+  background-color: #f2f4f7;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  max-width: 123px;
+  max-height: 48px;
 }
 
-.show-more {
-  padding: 8px 16px;
-  background-color: #ff4b5c;
+.showmorebtn {
+  width: 166px;
+  height: 56px;
+  padding: 0;
+  gap: 10px;
+  border-radius: 200px;
+  opacity: 0px;
+  background: #e44848;
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.005em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
   color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon {
+  fill: #101828;
+  stroke: #101828;
 }
