@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import axios from 'axios';
 import styles from './FilterBox.module.css';
+import symbolDefs from '../../assets/symbol-defs.svg';
 
 const FilterBox = ({ onFilter }) => {
   const [selectedEquipment, setSelectedEquipment] = useState([]); 
@@ -16,20 +17,21 @@ const FilterBox = ({ onFilter }) => {
   const vehicleEquipment = ['AC', 'Automatic', 'Kitchen', 'TV', 'Bathroom']; 
   const vehicleType = ['Van', 'Fully Integrated', 'Alcove']; 
 
-
+  // Toggle equipment selection
   const toggleEquipment = (equipment) => {
-  setSelectedEquipment((prevSelected) =>
-    prevSelected.includes(equipment)
-      ? prevSelected.filter((item) => item !== equipment) 
-      : [...prevSelected, equipment] 
-  );
-};
+    setSelectedEquipment((prevSelected) =>
+      prevSelected.includes(equipment)
+        ? prevSelected.filter((item) => item !== equipment) 
+        : [...prevSelected, equipment] 
+    );
+  };
 
+  // Select vehicle type
   const selectType = (type) => {
     setSelectedType(type === selectedType ? '' : type); 
   };
 
-
+  // Fetch locations from API
   useEffect(() => {
     const fetchLocations = async () => {
       try {
@@ -52,13 +54,20 @@ const FilterBox = ({ onFilter }) => {
     fetchLocations();
   }, []);
 
- 
-  const handleSearch = () => {
+  // Handle filter change
+  const handleLocationChange = (e) => {
+    console.log("Location selected:", e.target.value);
+    setSelectedFilters((prevState) => ({ ...prevState, location: e.target.value }));
+  };
+
+  // Memoize the filter object to avoid unnecessary recalculations
+  const memoizedFilters = useMemo(() => {
     const formMapping = {
       'Van': 'panelTruck',
       'Fully Integrated': 'fullyIntegrated',
       'Alcove': 'alcove'
     };
+
     const filters = {
       location: selectedFilters.location,
       AC: selectedEquipment.includes('AC'),
@@ -73,18 +82,24 @@ const FilterBox = ({ onFilter }) => {
       transmission: selectedEquipment.includes('Automatic') ? 'automatic' : 'manual',
       form: formMapping[selectedType] || '',
     };
-    onFilter(filters);  
-  };
+
+    //console.log("Generated Filters:", filters); 
+    return filters;
+  }, [selectedFilters, selectedEquipment, selectedType]); 
 
 
-  const handleLocationChange = (e) => {
-    setSelectedFilters({ ...selectedFilters, location: e.target.value });
+  const handleSearch = () => {
+    //console.log("Applying filters:", memoizedFilters);  
+    onFilter(memoizedFilters); 
   };
 
   return (
     <div className={styles.filterbox}>
       
       <div className={styles.locationbox}>
+        <svg width="20" height="20" className={styles.locationicon}>
+          <use href={`${symbolDefs}#icon-location`}></use>
+        </svg>
         <label className={styles.locationlabel}>Location</label>
         <select
           className={styles.select}
@@ -101,7 +116,6 @@ const FilterBox = ({ onFilter }) => {
         {error && <div className="error">{error}</div>}
       </div>
 
-      
       <div className={styles.equipmentbox}>
         <h3 className={styles.velicleheader}>Vehicle Equipment</h3>
         <div className={styles.buttonbox}>
@@ -111,13 +125,15 @@ const FilterBox = ({ onFilter }) => {
               onClick={() => toggleEquipment(equipment)}
               className={selectedEquipment.includes(equipment) ? styles.active : ''}
             >
+              <svg width="32" height="32" className={styles.buttonicon}>
+                <use href={`${symbolDefs}#icon-${equipment}`}></use>
+              </svg>
               {equipment}
             </button>
           ))}
         </div>
       </div>
 
-      
       <div className={styles.typebox}>
         <h3 className={styles.velicleheader}>Vehicle Type</h3>
         <div className={styles.buttonbox}>
@@ -127,6 +143,9 @@ const FilterBox = ({ onFilter }) => {
               onClick={() => selectType(type)}
               className={selectedType === type ? styles.active : ''}
             >
+              <svg width="32" height="32" className={styles.buttonicon}>
+                <use href={`${symbolDefs}#icon-${type}`}></use>
+              </svg>
               {type}
             </button>
           ))}

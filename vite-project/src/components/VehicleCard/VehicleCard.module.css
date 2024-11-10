@@ -60,7 +60,7 @@
   text-decoration-skip-ink: none;
   color: #101828;
   margin: 0;
-  padding-bottom: 24px;
+  padding-bottom: 0;
 }
 .vehicledescription {
   font-family: "Inter";
@@ -106,8 +106,27 @@
   text-decoration-skip-ink: none;
   max-width: 123px;
   max-height: 48px;
+  display: flex;
+  gap: 8px;
 }
+.ratingbox {
+  display: flex;
 
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 24px;
+}
+.rating {
+  margin: 0;
+  padding: 0;
+}
+.reviewcount {
+  padding-right: 24px;
+}
+.locationicon {
+  padding-right: 4px;
+}
 .showmorebtn {
   width: 166px;
   height: 56px;
@@ -129,7 +148,24 @@
   justify-content: center;
   align-items: center;
 }
-.icon {
-  fill: #101828;
-  stroke: #101828;
+.pricebox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.iconheart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 8px;
+  cursor: pointer;
+}
+.iconheart:hover {
+  stoke: #e44848;
+  fill: #e44848;
+}
+.iconheart:active {
+  stoke: #e44848;
+  fill: #e44848;
 }
