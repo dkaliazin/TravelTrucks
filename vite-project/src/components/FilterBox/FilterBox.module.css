@@ -1,0 +1,120 @@
+.filterbox {
+  padding: 48px 64px;
+  width: 360px;
+}
+.locationbox {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 40px;
+}
+.locationlabel {
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #10182899;
+}
+.select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 360px;
+  height: 56px;
+  border-radius: 0px;
+  border: none;
+  outline: none;
+  background-color: #f7f7f7;
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  border-radius: 12px;
+  padding: 16px 48px;
+}
+.filters {
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #475467;
+  margin: 0;
+  padding-bottom: 40px;
+}
+.velicleheader {
+  font-family: "Inter";
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #101828;
+  margin: 0;
+  padding-bottom: 24px;
+}
+.equipmentbox {
+  padding-bottom: 32px;
+}
+.typebox {
+  padding-bottom: 40px;
+}
+button {
+  width: 112px;
+  height: 96px;
+  padding: 16px 18px;
+  border-radius: 12px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ccc;
+  opacity: 1;
+  background-color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  border-color: #e44848;
+}
+
+button.active {
+  border-color: #e44848;
+}
+.buttonbox {
+  padding-top: 24px;
+  margin: 0;
+  border-top: 1px solid #dadde1;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 8px;
+  column-gap: 12px;
+}
+.searchbutton {
+  width: 166px;
+  height: 56px;
+  padding: 16px 60px 16px 60px;
+  gap: 10px;
+  border-radius: 200px;
+  opacity: 0px;
+  background: #e44848;
+
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.005em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #fff;
+}

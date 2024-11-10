@@ -3,7 +3,6 @@ import backgroundImage from '../../assets/camper.jfif';
 import styles from './HomePage.module.css'; 
 const HomePage = () => {
   return (
-    /*style={{ backgroundImage: `url(${backgroundImage})` }}*/
     <div className={styles.container} >
       <div className={styles.content}>
         <h1 className={styles.title}>Campers of your dreams</h1>
